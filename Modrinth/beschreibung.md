@@ -41,7 +41,7 @@ There is no extra keybind that opens a menu, and nothing is added to the title s
 
 ## Performance
 
-Measured on an RTX 5070, with everything switched on at the same time, the mod added about 0.7 ms per frame. The default set added about 0.25 ms, and most single effects stay under 0.1 ms. Tested together with Sodium.
+Measured on an RTX 5070, with everything switched on at the same time, the mod added about 0.7 ms per frame. The default set added about 0.25 ms, and most single effects stay under 0.1 ms. Tested together with Sodium, and works in Lunar Client.
 
 ## Requirements
 
@@ -51,6 +51,8 @@ Measured on an RTX 5070, with everything switched on at the same time, the mod a
 | Java | 21 | 25 |
 | Needed | Fabric API | Fabric API |
 | Optional | Mod Menu, Sodium | Mod Menu, Sodium |
+
+**Lunar Client compatible:** add the jar to a Fabric profile in Lunar Client and it works there too, settings included.
 
 The lyrics need the **Spotify desktop app** (tested on Windows). Browser Spotify is not supported.
 
