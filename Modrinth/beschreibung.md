@@ -2,6 +2,8 @@
 
 **Purely visual effects for Fabric: a glowing night sky that sings along to your Spotify, hand auras, coloured water and a gothic look. No cheats, no ESP. Everything you see is only on your screen.**
 
+![Everything on](https://raw.githubusercontent.com/Vamp1rexe/atlas-visuals/main/Modrinth/gallery/1-alles-an.png)
+
 ## Spotify Sky
 
 Play a song in the Spotify desktop app and the sky lights up.
