@@ -1,0 +1,10 @@
+# build output and local caches
+**/build/
+**/.gradle/
+**/run/
+**/out/
+**/.idea/
+**/*.iml
+**/test-log.txt
+# the original Anubis jar this was derived from is not redistributed here
+/Anubis Beta*.jar

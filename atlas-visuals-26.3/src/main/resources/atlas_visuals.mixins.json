@@ -1,0 +1,41 @@
+{
+  "required": true,
+  "package": "net.atlasvisuals.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "AccessorAtmosphereClientLevel",
+    "AccessorHandItemLayer",
+    "AccessorHandItemRenderState",
+    "AccessorHandPlayerModel",
+    "MixinAtmosphereCloudRenderer",
+    "MixinAtmosphereFogRenderer",
+    "MixinAtmosphereRainFog",
+    "MixinAtmosphereSkyRenderer",
+    "MixinClientConnection",
+    "MixinColorGradingGameRenderer",
+    "MixinCustomFovGameRenderer",
+    "MixinCustomGlintTextureTransform",
+    "MixinHandAuraItemInHandRenderer",
+    "MixinHandModelItemInHandRenderer",
+    "MixinHandsItemInHandRenderer",
+    "MixinJumpCirclesLevelRenderer",
+    "MixinJumpCirclesLivingEntity",
+    "MixinKeyboardHandler",
+    "MixinLevelRenderer",
+    "MixinLiquidBlockRenderer",
+    "MixinMinecraft",
+    "MixinMotionBlurGameRenderer",
+    "MixinMouseHandler",
+    "MixinPinkWaterBiome",
+    "MixinPinkWaterFog",
+    "MixinPlayer",
+    "MixinScreenEffectRenderer",
+    "MixinSwingAnimationItemInHandRenderer",
+    "MixinSwingAnimationLivingEntity",
+    "MixinTimeChangerClock",
+    "MixinWeaponInspectItemInHandRenderer"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

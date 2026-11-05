@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "atlas_visuals",
+  "version": "${version}",
+  "name": "Atlas Visuals",
+  "description": "Purely visual effects: a glowing sky with Spotify lyrics projected into it, hand aura, water colours, hand pose, swing animations and more. All settings live in Mod Menu. Based on the visual parts of Anubis by 4ldenz (GPL-3.0).",
+  "authors": ["Noxiryn"],
+  "contributors": ["4ldenz (Anubis, original visual code)"],
+  "license": "GPL-3.0-only",
+  "icon": "assets/atlas_visuals/textures/misc/jump_circle_logo.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["net.atlasvisuals.AtlasVisualsClient"],
+    "modmenu": ["net.atlasvisuals.gui.ModMenuIntegration"]
+  },
+  "mixins": ["atlas_visuals.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

@@ -1,0 +1,60 @@
+plugins {
+    id 'fabric-loom' version '1.16.3'
+}
+
+version = project.mod_version
+group = 'net.atlasvisuals'
+base { archivesName = 'atlas-visuals' }
+
+repositories {
+    maven { url = 'https://maven.terraformersmc.com/releases/' }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    // The ported sources keep Fabric's stable intermediary names (class_310 etc.),
+    // so intermediary doubles as the "named" mapping and the remap step is a no-op.
+    mappings loom.layered { }
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+
+    // gradlew runClientGameTest -PtestMods="a.jar;b.jar" adds real mods (Sodium, Mod Menu) to the test run.
+    if (project.hasProperty('testMods')) {
+        modLocalRuntime files(project.testMods.split(';'))
+    }
+}
+
+fabricApi {
+    configureTests {
+        createSourceSet = true
+        modId = 'atlas_visuals_test'
+        enableGameTests = false
+        enableClientGameTests = true
+        eula = true
+    }
+}
+
+// Plays the built jar in a production Fabric install, the way a launcher loads it.
+tasks.register('prodClient', net.fabricmc.loom.task.prod.ClientProductionRunTask) {
+    dependsOn tasks.named('remapJar')
+    mods.from(tasks.named('remapJar'))
+    if (project.hasProperty('testMods')) {
+        mods.from(project.testMods.split(';'))
+    }
+    runDir = project.layout.buildDirectory.dir('prod-run')
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') { expand 'version': project.version }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+    it.options.encoding = 'UTF-8'
+}
+
+java { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }
+
+jar { from('LICENSE') { rename { "LICENSE_atlas_visuals" } } }
