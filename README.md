@@ -38,6 +38,7 @@ Play a song in the Spotify desktop app and the sky lights up.
 - **Jump Circles**: a glowing pentagram where you land.
 - **Atmosphere**, **Hit Particles**, **Floating Relics**, **Particles**, **Totem Spirit**.
 - **Color Grading**, **Motion Blur**, **Custom FOV**, **Time Changer** (client-side only).
+- **Light Overlay**: shows where mobs can spawn, like Lighty's carpet mode. Press <kbd>F8</kbd> to switch it on and off. Follows your theme colour, or use Lighty's red, orange and green, or pick your own.
 
 ## Screenshots
 
@@ -119,4 +120,5 @@ The jar is written to `build/libs/`. `gradlew runClientGameTest` starts a test w
 Licensed under **GPL-3.0-only**, see [`LICENSE`](LICENSE).
 
 The visual effects are based on [Anubis](https://github.com/4ldenz/Anubis-client) by **4ldenz** (GPL-3.0). This is not an official Anubis build, and none of Anubis' combat, movement, macro, ESP or account features are included.
+The Light Overlay follows the carpet mode of [Lighty](https://github.com/SchmarrnDevs/Lighty) by andi_makes and contributors (Apache-2.0).
 Lyrics belong to their rights holders and are never bundled. Font: Manrope (SIL Open Font License).

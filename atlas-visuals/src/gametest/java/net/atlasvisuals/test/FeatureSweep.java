@@ -212,6 +212,7 @@ final class FeatureSweep {
       step(context, world, "underwater", "tp @p 0 -60.5 10 0 0", null);
       step(context, world, "hidden-hud", "tp @p 0 -58 0 0 -10", client -> client.field_1690.field_1842 = true);
       step(context, world, "hud-back", null, client -> client.field_1690.field_1842 = false);
+      lightOverlay(context, world);
       step(context, world, "inspect", "item replace entity @p weapon.mainhand with diamond_sword", null);
       context.getInput().pressKey(70);
       context.waitTicks(15);
@@ -271,6 +272,28 @@ final class FeatureSweep {
       context.waitTicks(10);
       context.runOnClient(client -> client.method_1507(null));
       System.out.println("[AtlasSweep] Situations done");
+   }
+
+   /** A roofed room with a torch: red where mobs always spawn, orange at the open edge, the safe colour by the torch. */
+   private static void lightOverlay(ClientGameTestContext context, TestSingleplayerContext world) {
+      command(world, "fill -12 -54 -24 12 -54 -4 stone");
+      command(world, "setblock 0 -60 -14 torch");
+      command(world, "tp @p 0 -57 -4 180 40");
+      context.runOnClient(client -> ModuleRegistry.all().stream().filter(module -> module.id().equals("light-overlay")).forEach(module -> module.setEnabled(true)));
+      for (String mode : List.of("Theme", "Classic")) {
+         context.runOnClient(client -> ModuleRegistry.all().stream()
+            .filter(module -> module.id().equals("light-overlay"))
+            .flatMap(module -> module.settings().stream())
+            .filter(setting -> setting instanceof ModeSetting && setting.id().equals("color-mode"))
+            .forEach(setting -> ((ModeSetting)setting).set(mode)));
+         context.waitTicks(20);
+         world.getClientWorld().waitForChunksRender();
+         context.takeScreenshot("sweep-light-overlay-" + mode.toLowerCase(java.util.Locale.ROOT));
+      }
+
+      command(world, "fill -12 -54 -24 12 -54 -4 air");
+      command(world, "setblock 0 -60 -14 air");
+      command(world, "tp @p 0 -58 0 0 -10");
    }
 
    private static void step(ClientGameTestContext context, TestSingleplayerContext world, String name, String command, java.util.function.Consumer<class_310> action) {

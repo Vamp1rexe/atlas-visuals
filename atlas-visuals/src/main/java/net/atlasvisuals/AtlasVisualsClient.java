@@ -20,6 +20,7 @@ import net.atlasvisuals.module.impl.render.HandModelModule;
 import net.atlasvisuals.module.impl.render.HandsModule;
 import net.atlasvisuals.module.impl.render.HitParticlesModule;
 import net.atlasvisuals.module.impl.render.JumpCirclesModule;
+import net.atlasvisuals.module.impl.render.LightOverlayModule;
 import net.atlasvisuals.module.impl.render.MotionBlurModule;
 import net.atlasvisuals.module.impl.render.RelicParticlesModule;
 import net.atlasvisuals.module.impl.render.SwingAnimationModule;
@@ -63,6 +64,7 @@ public final class AtlasVisualsClient implements ClientModInitializer {
          new CustomFovModule(),
          new TimeChangerModule(),
          new JumpCirclesModule(),
+         new LightOverlayModule(),
          new HitParticlesModule(),
          new FloatingRelicsModule(),
          new RelicParticlesModule(),

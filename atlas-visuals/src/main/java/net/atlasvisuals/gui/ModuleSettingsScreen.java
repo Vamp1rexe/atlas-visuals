@@ -140,7 +140,8 @@ final class ModuleSettingsScreen extends ScrollingScreen {
          return "Mouse " + (key - 1000 + 1);
       } else {
          String name = GLFW.glfwGetKeyName(key, 0);
-         return name != null ? name.toUpperCase(Locale.ROOT) : "Key " + key;
+         // GLFW has no printable name for keys like F8, so those use the game's own key name.
+         return (name != null ? name : net.minecraft.class_3675.class_307.field_1668.method_1447(key).method_27445().getString()).toUpperCase(Locale.ROOT);
       }
    }
 

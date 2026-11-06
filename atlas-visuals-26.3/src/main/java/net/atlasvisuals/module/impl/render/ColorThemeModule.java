@@ -24,7 +24,9 @@ public final class ColorThemeModule extends ClientModule {
       "sky-title-color", 1.3F,
       "night-color", 0.12F,
       "sunset-color", 0.8F,
-      "aurora-top-color", 1.3F
+      "aurora-top-color", 1.3F,
+      "warning-color", 0.5F,
+      "safe-color", 1.7F
    );
    private final ColorSetting color = this.addSetting("color", new ColorSetting("Theme Color", ColorTheme.BASE));
 

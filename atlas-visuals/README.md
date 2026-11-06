@@ -6,6 +6,7 @@ A client-side Fabric mod for Minecraft 1.21.11 with visual effects only:
 - **Water Color**, **Hand Aura**, **Hand Pose** (moves the held item, farther away by default), 3D Hand, Swing Animation, Weapon Inspect
 - Atmosphere, Color Grading, Motion Blur, Custom Glint, Custom FOV, Time Changer
 - Jump Circles (a pentagram where you jump), Hit Particles, Floating Relics, Particles, Totem Spirit
+- Light Overlay (where mobs can spawn, like Lighty's carpet mode; F8 switches it on and off)
 
 ## Settings
 
@@ -41,3 +42,4 @@ GPL-3.0-only, see `LICENSE`. The visual effects are derived from [Anubis](https:
 (GPL-3.0), decompiled from version 0.9.9.3. This is not an official Anubis build. Anubis' combat, movement, macro, ESP and account
 features are not included. Lyrics text belongs to its rights holders and is fetched at runtime, never bundled.
 Manrope font: SIL Open Font License, see `assets/atlas_visuals/fonts/`.
+The Light Overlay follows the carpet mode of [Lighty](https://github.com/SchmarrnDevs/Lighty) by andi_makes and contributors (Apache-2.0).
